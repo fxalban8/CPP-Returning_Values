@@ -4,14 +4,16 @@ using namespace std;
 
 //declaring functions
 void deployMenu();	
-void processSelection(); 
+int processSelection(); 
+string messageReturned();
 
 
 //MAIN FUNCTION
 int main(){
 	deployMenu();
-	processSelection();
 	
+	cout<<messageReturned();
+
 	//Flushing the buffer
 	int c;
 	do {
@@ -32,7 +34,7 @@ void deployMenu(){
 	cout<<"4. QUIT"<<endl;
 }
 
-void processSelection(){
+int processSelection(){
 	int option=0;
 	do{
 		cout<<"Press a number from 1 to 4"<<endl;
@@ -41,21 +43,28 @@ void processSelection(){
 	
 	cout<<"Processing..."<<endl;
 	sleep(3);
-	switch(option){
+	return option;
+}
+
+string messageReturned(){
+		int a=processSelection();
+		string message="";	
+		switch(a){
 		case 1:
-			cout<<"Information Saved"<<endl;
+			message="Information Saved";
 			break;
 		case 2:
-			cout<<"Information Deleted"<<endl;
+			message="Information Deleted";
 			break;
 		case 3:
-			cout<<"Information Edited"<<endl;
+			message="Information Edited";
 			break;
 		case 4:	
-			cout<<"Quitting..."<<endl;
+			message="Quitting...";
 			break;
 		default:
-			cout<<"Unknow number entered"<<endl;
+			message="Unknow number entered";
 			break;
 	}
+	return message;
 }
