@@ -49,4 +49,13 @@ void processSelection(){
 			cout<<"Information Deleted"<<endl;
 			break;
 		case 3:
-
+			cout<<"Information Edited"<<endl;
+			break;
+		case 4:	
+			cout<<"Quitting..."<<endl;
+			break;
+		default:
+			cout<<"Unknow number entered"<<endl;
+			break;
+	}
+}
